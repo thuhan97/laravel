@@ -15,7 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('sau', function () {
-    return "saunguyen";
-});
+Route::get('register', 'StudentController@create');
+Route::post('register', 'StudentController@store');
+Route::get('complete-register', 'StudentController@index');
+
 
