@@ -21,6 +21,7 @@ h3{
 	width: 500px;
 	margin: 50px auto;
 	border: 2px solid #4267b2;
+	padding-top: 10px;
 }
 .group{
 	margin: 25px 30px;
@@ -69,13 +70,19 @@ span{
 	color: #333;
 	font-size: 16px;
 }
-	</style>
+a{
+	text-decoration: none;
+	margin-left: 20px;
+	margin-top: 30px;
+}
+
+</style>
 	
 </head>
 <body>
   
 	<div class="register">
-		
+		<a href="/students">Xem danh sach sinh vien</a>
 		<form>
 			<h3>Bạn vừa đăng ký xong sinh viên có mã là {{ $student ->id}}</h3> 
 

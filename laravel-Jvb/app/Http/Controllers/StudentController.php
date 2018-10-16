@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Student;
 
-
+ 
 class StudentController extends Controller
 {
     /**
@@ -17,7 +17,7 @@ class StudentController extends Controller
      */
     public function index(){
        $student = Student::orderBy('id', 'desc')->first();
-    return view('Student.index', compact('student'));
+    return view('Student.index', compact('student'));   
     }
     public function create()
     {
@@ -53,10 +53,32 @@ class StudentController extends Controller
         return redirect()->action('StudentController@index');
                         
     }
-    public function show(Student $student)
+    public function list(Student $student)
     {
-        return view('Student.show',compact('student'));
+        $student=Student::all();
+        return view('Student.list',compact('student'));
     }
 
+    public function edit($id){
+        $student = Student::find($id);
+        //echo $student->name;
+       return view('Student.edit',compact('student','id'));
+    }
     
+    public function update(Request $request, $id)
+    {
+        $student = new Student();
+        $data['id'] = $id;
+        Student::where('id',$data)->update(array(
+                         'name'=>$request->name, 'gender'=>$request->gender,'faculty'=>$request->faculty,'birthday_year'=>$request->birthday_year,
+));
+
+        return redirect('/students')->with('success', 'New student has been updated!!');
+    }
+    public function delete($id){
+        
+        $student = Student::findOrFail($id);
+        $student->delete();
+        return redirect('/students');
+    }
 }

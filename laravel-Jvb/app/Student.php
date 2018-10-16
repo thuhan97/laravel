@@ -12,4 +12,5 @@ class Student extends Model
         'name', 'gender','faculty','birthday_year'
     ];
     public $timestamps=false;
+    
 }
