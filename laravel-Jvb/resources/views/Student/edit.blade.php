@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Đăng ký tân sinh viên</title>
+	<title>Register new student</title>
 	<meta charset="utf-8"></meta>
 	<link rel="stylesheet" type="text/css" href="register.css">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -17,11 +17,11 @@
 			 @csrf
 
 			<!-- <input type="hidden" name="_token" value=”{{ csrf_token() }}”> -->
-			<h1>Sửa thông tin sinh viên</h1>
+			<h1>Update student's profile</h1>
 			@include('block.error')
 			<span id="error"></span>
 			<div class="group">
-				<button type="button">Họ và tên</button>
+				<button type="button">Full Name</button>
 				<input type="text" name="name"  id="name" value="{{$student->name}}" />
 				</br>
 				<!-- @if ($errors->has('name'))
@@ -29,7 +29,7 @@
 				@endif -->
 			</div>
 			<div class="group">
-				<button type="button">Giới tính</button>
+				<button type="button">Gender</button>
 				<input type="radio" name="gender" value="0" {{ $student->gender == '0' ? 'checked' : ''}}/> Nữ
 				<input type="radio" name="gender" value="1" {{ $student->gender == '1' ? 'checked' : ''}}/> Nam
 				</br>
@@ -38,7 +38,7 @@
 				@endif -->
 			</div>
 			<div class="group">
-				<button type="button">Phân khoa</button>
+				<button type="button">Faculty</button>
 				<select id="faculty" name="faculty" >
 					<option value=""></option>
 					<option value="1" {{ $student->faculty == '1' ? 'selected' : ''}}>Khoa học máy tính</option>
@@ -50,13 +50,13 @@
 				@endif -->
 			</div>
 			<div class="group">
-				<button type="button">Năm sinh</button>
+				<button type="button">Birthday_year</button>
 				<input type="text" name="birthday_year" id="birthday_year" value={{$student->birthday_year}} /></br>
 				<!-- @if ($errors->has('birthday_year'))
     				<span class="error">{{ $errors->first('birthday_year') }}</span>
 				@endif -->
 			</div>
-			<button type="submit" name="submit" class="submit" onclick="return validateFrm()">Lưu</button>
+			<button type="submit" name="submit" class="submit" onclick="return validateFrm()">Update</button>
 		</form>
 	</div>
 	

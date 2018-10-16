@@ -51,12 +51,13 @@ class StudentController extends Controller
       // echo '<a href = "/insert">Click Here</a> to go back.';
         Student::create($request->all());
    
-        return redirect()->action('StudentController@index');
+        return redirect()->action('StudentController@index')->with('status', 'Profile saved!');
                         
     }
     public function list(Student $student)
     {
         $student=Student::all();
+        $student = Student::simplePaginate(10);
         return view('Student.list',compact('student'));
     }
 
@@ -74,12 +75,13 @@ class StudentController extends Controller
                          'name'=>$request->name, 'gender'=>$request->gender,'faculty'=>$request->faculty,'birthday_year'=>$request->birthday_year,
 ));
 
-        return redirect('/students');
+        return redirect('/students')->with('status', 'Profile updated!');
     }
     public function delete($id){
         
         $student = Student::findOrFail($id);
         $student->delete();
         return redirect('/students');
+      
     }
 }
