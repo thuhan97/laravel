@@ -4,44 +4,12 @@
 	<title>Danh sach sinh vien</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-	<style type="text/css">
-		.content{
+	<link href="{{ URL::asset('css/list.css') }}" rel="stylesheet" media="screen">
 
-			width: 600px;
-			margin: 30px;
-			padding: 20px;
-			margin: auto;
-		}
-
-		th{
-			border-top: 1px solid #ccc;
-			border-bottom: 1px solid #ccc;
-			border-right: 1px solid #ccc;
-			padding: 5px;
-		}
-		td{
-			padding: 5px;
-			border-bottom: 1px solid #ccc;
-			border-right: 1px solid #ccc;
-		}
-		.left-table{
-			border-left: 1px solid #ccc;
-		}
-		.edit-icon{
-			color: blue;
-			padding: 5px;
-		}
-		.delete-icon{
-			color: red;
-		}
-		h1{
-			color: #333;
-			text-align: center;
-		}
-	</style>
 </head>
 
 <body>
+	
 <div class="content">
 	<h1>Danh sach sinh vien</h1>
 	<table>

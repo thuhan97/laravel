@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\RegisterRequest;
 use App\Student;
 
  
@@ -23,7 +24,7 @@ class StudentController extends Controller
     {
         return view('Student.create');
     }
-    public function store(Request $request){
+    public function store(RegisterRequest $request){
         //print_r($request);die;
         // $allRequest =$request->all();
         // $name=$allRequest['name'];
@@ -65,7 +66,7 @@ class StudentController extends Controller
        return view('Student.edit',compact('student','id'));
     }
     
-    public function update(Request $request, $id)
+    public function update(RegisterRequest $request, $id)
     {
         $student = new Student();
         $data['id'] = $id;
@@ -73,7 +74,7 @@ class StudentController extends Controller
                          'name'=>$request->name, 'gender'=>$request->gender,'faculty'=>$request->faculty,'birthday_year'=>$request->birthday_year,
 ));
 
-        return redirect('/students')->with('success', 'New student has been updated!!');
+        return redirect('/students');
     }
     public function delete($id){
         

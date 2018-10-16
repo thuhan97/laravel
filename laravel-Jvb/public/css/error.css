@@ -1,0 +1,14 @@
+.error{
+	margin-left: 120px;
+	padding: 5px;
+	font-size: 13px;
+}
+.error_msg{
+	color: red;
+	margin-left: 5px;
+}
+i{
+	margin-left: 10px;
+	margin-top: 10px;
+	color: red;
+}
