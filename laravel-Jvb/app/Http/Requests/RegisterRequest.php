@@ -33,10 +33,10 @@ class RegisterRequest extends FormRequest
     public function messages()
 {
     return [
-        'name.required' => 'Hay nhap ten',
-        'gender.required'  => 'Hay chon gioi tinh', 
-        'faculty.required' => 'Hay chon phan khoa',
-        'birthday_year.required'  => 'Hay nhap nam sinh',
+        'name.required' => 'The name field is required',
+        'gender.required'  => 'The gender field is required', 
+        'faculty.required' => 'The faculty field is required',
+        'birthday_year.required'  => 'The birth_day field is required',
     ];
 }
 }

@@ -15,7 +15,7 @@
 		@if (session()->has('message'))
     <h3>{{session()->get('mesage')}}</h3>
 	@endif
-		<form role="form" method="post"  name="register" action="{{ action('StudentController@store') }}" >
+		<form role="form" method="post"  name="register" action="{{ action('UserController@postStoreUser') }}" >
 			 @csrf
 
 			<!-- <input type="hidden" name="_token" value=”{{ csrf_token() }}”> -->
@@ -42,8 +42,8 @@
 				<button type="button">Faculty</button>
 				<select id="faculty" name="faculty">
 					<option value=""></option>
-					<option value="1">Khoa học máy tính</option>
-					<option value="2">Khoa học vật liệu</option>
+					<option value="1">Computer Science</option>
+					<option value="2">Material Science</option>
 				</select>
 				</br>
 				<!-- @if ($errors->has('faculty'))

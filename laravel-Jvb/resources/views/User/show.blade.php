@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Register New student</title>
+	<title>Register New user</title>
 	<meta charset="utf-8"></meta>
 	<link rel="stylesheet" type="text/css" href="register.css">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -10,39 +10,39 @@
 </head>
 <body>
   	@if (session('status'))
-    <div class="alert alert-success">
+    <div class="alert alert-success success">
         {{ session('status') }}
     </div>
 	@endif
 	<div class="register">
-		<a href="/students/students">View list student</a>
+		<a href="/users/users">View list user</a>
 		<form>
-			<h3>You have registed with id number is {{ $student ->id}}</h3> 
+			<h3>You have registed with id number is {{ $user ->id}}</h3> 
 
 			<div class="group">
 				<button type="button">Full Name </button>
-				<span>{{ $student ->name}}</span>
+				<span>{{ $user ->name}}</span>
 				
 			</div>
 			<div class="group">
 				<button type="button">Gender </button>
 				<span><?php
-					if($student ->gender==0)
-					echo "Nữ";
-					else echo "Nam";
+					if($user ->gender==0)
+					echo "Female";
+					else echo "Male";
 				?></span>
 			</div>
 			<div class="group">
 				<button type="button">Faculty</button>
 				<span><?php
-					if($student->faculty==1)
-					echo "Khoa học máy tính";
-					else echo "Khoa học vật liệu";
+					if($user->faculty==1)
+					echo "Computer Science";
+					else echo "Material Science";
 				?></span>
 			</div>
 			<div class="group">
 				<button type="button">Birthday_year</button>
-				<span>{{ $student ->birthday_year}}</span>
+				<span>{{ $user ->birthday_year}}</span>
 			</div>
 			
 		</form>

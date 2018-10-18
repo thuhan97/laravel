@@ -23,4 +23,34 @@ Route::get('edit/student/{id}', 'StudentController@edit');
 Route::post('edit/student/{id}', 'StudentController@update');
 Route::get('/delete/student/{id}', 'StudentController@delete');
 
+Route::group(['prefix'=>'users'],function(){
+	Route::get('/users',[
+		'uses'=>'UserController@getAllUsers',
+		'as'=>'user.index'
+	]);
+	Route::get('/create',[
+		'uses'=>'UserController@postCreateUser',
+		'as'=>'user.create'
+	]);
+	Route::post('store',[
+		'uses'=>'UserController@postStoreUser',
+		'as'=>'user.store'
+	]);
+	Route::get('show',[
+		'uses'=>'UserController@postShowUser',
+		'as'=>'user.show'
+	]);
+	Route::get('{id}/edit',[
+		'uses'=>'UserController@postEditUser',
+		'as'=>'user.edit'
+	]);
+	Route::post('{id}/update',[
+		'uses'=>'UserController@postUpdateUser',
+		'as'=>'user.update'
+	]);
+	Route::get('{id}/delete',[
+		'uses'=>'UserController@postDeleteUser',
+		'as'=>'user.delete'
+	]);
+});
 

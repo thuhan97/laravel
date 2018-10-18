@@ -1,13 +1,15 @@
-
+body{
+	padding: 20px;
+}
 .content{
 
-width: 600px;
+width: 1000px;
 margin: 30px;
 padding: 20px;
 margin: auto;
 }
 
-th{
+/*th{
 border-top: 1px solid #ccc;
 border-bottom: 1px solid #ccc;
 border-right: 1px solid #ccc;
@@ -20,7 +22,7 @@ border-right: 1px solid #ccc;
 }
 .left-table{
 border-left: 1px solid #ccc;
-}
+}*/
 .edit-icon{
 color: blue;
 padding: 5px;
@@ -31,4 +33,17 @@ color: red;
 h1{
 color: #333;
 text-align: center;
+}
+button a{
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	
+}
+button a:hover{
+	color: yellow;
+	text-decoration: none;
+}
+.success{
+	width: 300px;
 }
