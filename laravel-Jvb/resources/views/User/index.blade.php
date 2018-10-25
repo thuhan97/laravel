@@ -16,7 +16,8 @@
         {{ session('status') }}
     </div>
 	@endif
-<button class="btn btn-success float-right"><a href="create">Add new student</a></button>
+<a href="/logout" class="float-right">Logout</a></br></br>
+<button class="btn btn-success float-right"><a href="{{route('user.create',['id'=>null])}}">Add new student</a></button>
 <div class="content">
 	<h1>List students</h1>
 	<table  class="table table-hover">
@@ -48,8 +49,8 @@
 			</td>
 			<td style="text-align: right;">{{$row->birthday_year}}</td>
 			<td>
-				<a href="{{$row->id}}/edit"><i class="fas fa-edit edit-icon"></i></a>
-				<a href="{{$row->id}}/delete" class="delete"><i class="fas fa-trash-alt delete-icon"></i></a>
+				<a href="{{route('user.create',['id'=>$row->id])}}"><i class="fas fa-edit edit-icon"></i></a>
+				<a href="{{route('user.destroy',['id'=>$row->id])}}" class="delete"><i class="fas fa-trash-alt delete-icon"></i></a>
 			</td>
 		</tr>
 		@endforeach

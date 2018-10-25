@@ -20,9 +20,11 @@ class StudentController extends Controller
        $student = Student::orderBy('id', 'desc')->first();
     return view('Student.index', compact('student'));   
     }
-    public function create()
+    public function create($id=null)
     {
+      
         return view('Student.create');
+
     }
     public function store(RegisterRequest $request){
         //print_r($request);die;

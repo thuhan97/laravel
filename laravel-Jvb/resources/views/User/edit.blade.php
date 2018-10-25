@@ -13,7 +13,7 @@
 
 	<div class="register">
 
-		<form role="form" method="post"  name="register" action="{{ action('UserController@postUpdateUser',$user->id) }}" >
+		<form role="form" method="put"  name="register" action="/users/{{$user->id}}" >
 			 @csrf
 
 			<!-- <input type="hidden" name="_token" value=”{{ csrf_token() }}”> -->

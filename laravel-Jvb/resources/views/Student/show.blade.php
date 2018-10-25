@@ -15,7 +15,7 @@
     </div>
 	@endif
 	<div class="register">
-		<a href="/students/students">View list student</a>
+		<a href="students">View list student</a>
 		<form>
 			<h3>You have registed with id number is {{ $student ->id}}</h3> 
 

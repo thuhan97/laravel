@@ -36,4 +36,20 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+    // public function login(Request $request){
+    //     $this->validate($request,[
+    //         'email'=>'required|email',
+    //         'password'=>'required'
+    //     ]);
+    //     if(auth()->attempt(['email'=>$request->email,'password'=>$request->password])){
+
+    //         if(auth()->user()->confirmed==0){
+    //             Auth::logout();
+    //             return back()->with('warning', 'Your account has not yet been activated. Please check Your email');
+    //         }
+    //         return redirect(route('home'));
+    //     }else {
+    //         return back()->with('warning', 'Address email or/and password are incorrect.');
+    //     }
+    // }
 }
